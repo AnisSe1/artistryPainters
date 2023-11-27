@@ -1,0 +1,105 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+
+<section class="contactSection p-5">
+  <h1 class="text-center text-shadow-3">Contact Us</h1>
+
+  {% if messages %}
+    <div role="alert">
+      {% for message in messages %}
+        {% if message.tags == 'success' %}
+          <div class="alert alert-success text-center" role="alert">
+            {{ message }}
+          </div>
+        {% elif message.tags == 'error' %}
+          <div class="alert alert-danger text-center" role="alert">
+            {{ message }}
+          </div>
+        {% else %}
+          <div class="alert alert-info text-center" role="alert">
+            {{ message }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="container-lg p-5 my-3">
+    <div class="row">
+      <div class="col-md-6 col-lg-6">
+        <h2 class="text-center"><strong>Get in Touch with Us</strong></h2>
+        <p class="text-center">
+          Please feel free to use the contact form below to send us a message.
+          Our team will make every effort to respond to your inquiry promptly.
+          Alternatively, you can reach us via phone or email using the provided
+          contact information.
+
+          <ul class="no-bullet">
+            <li class="text-center"><strong>Phone number:</strong> 000 000 000</li>
+            <li class="text-center"><strong>Email:</strong> info@example.com</li>
+            <li class="text-center"><strong>Address:</strong> address 123</li>
+          </ul>
+        </p>
+      </div>
+
+      <div class="col-md-4 col-lg-6">
+        <form class="contactForm" method="post" action="{% url 'contact' %}">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="bi bi-person-fill"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="Please enter your name"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address:</label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="bi bi-envelope-fill"></i>
+              </span>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="email@example.com"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Comment:</label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="message"
+              rows="5"
+              maxlength="254"
+              style="resize: none"
+              placeholder="Enter your comment here (less than 250 characters)"
+            ></textarea>
+          </div>
+
+          <div class="mt-4 text-center">
+            <button type="submit" class="btn btn-success w-100">
+              <strong>Submit</strong>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

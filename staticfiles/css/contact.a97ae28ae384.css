@@ -1,0 +1,19 @@
+ .contactSection {
+     background-image: url("/static/images/ColouredWavesContact.c112c8e688fa.svg");
+     background-repeat: no-repeat;
+     background-size: cover;
+
+     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.526);
+     color: white !important;
+ }
+
+ h1 {
+     font-family: 'Rubik Wet Paint', cursive;
+ }
+
+ footer {
+     background-color: black;
+
+     /* Adjust the position of the image */
+     color: white;
+ }

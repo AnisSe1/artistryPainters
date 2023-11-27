@@ -1,0 +1,44 @@
+ .hero {
+     background-color: black;
+     font-family: 'Rubik Wet Paint', cursive;
+     color: white;
+     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.785);
+
+ }
+
+ .underHeader {
+     background-color: black;
+     color: white;
+     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.801);
+
+ }
+
+ .no-bullet li {
+     list-style-type: none;
+ }
+
+
+ .fade-in {
+     animation: fadeInAnimation 1.3s ease-in-out;
+ }
+
+ @keyframes fadeInAnimation {
+     0% {
+         opacity: 0;
+     }
+
+     100% {
+         opacity: 1;
+     }
+ }
+
+
+ .card {
+     transition: transform 0.3s ease;
+     transition: box-shadow 0.3s ease;
+ }
+
+ .card:hover {
+     transform: scale(1.05);
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+ }

@@ -1,0 +1,27 @@
+{% extends 'main.html' %} {% load static %}{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/login.css' %}" />
+
+<h1>Please sign in</h1>
+<section class="loginForm">
+  <form action="..." method="POST">
+    <div>
+      <label for="email">Email address</label>
+      <input type="email" name="email" id="email" />
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" />
+    </div>
+
+    <div>
+      <label for="remember">
+        <input type="checkbox" name="remember" id="remember" /> Remember
+      </label>
+    </div>
+
+    <button>Sign In</button>
+  </form>
+</section>
+
+{% endblock content %}

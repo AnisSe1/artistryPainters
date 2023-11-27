@@ -1,0 +1,233 @@
+{% extends 'main.html' %} {% load static %}{% block content %}
+
+{% comment %} <!-- Hero --> {% endcomment %}
+<div class="hero p-5 py-4">
+  <h1 class="text-center">Bringing Your Walls to Life</h1>
+  <h4 class="text-center">Masterful Wall Painting Services</h4>
+</div>
+
+<div class="underHeader">
+  <p class="text-center p-0">
+    Whether you're looking to transform your home, office,<br />
+    or any space that craves a touch of artistic brilliance, <br />
+    <strong>you've come to the right place.</strong>
+  </p>
+  <img
+    class="heroImage w-100"
+    src="{% static 'images/headerWave.svg' %}"
+    alt="image"
+  />
+</div>
+
+{% comment %} <!-- Header/Information --> {% endcomment %}
+<section class="header">
+  <h1 class="header text-center">
+    Transform Your Space with Expert Wall Painting
+  </h1>
+  <p class="headerParagraph text-center">
+    At [Company Name], we specialize in providing top-notch wall painting
+    solutions that breathe new life into your residential or commercial space.
+    <br />
+    With our team of skilled and experienced painters, we deliver exceptional
+    results that exceed your expectations. <br />
+    Whether you're looking to revitalize a single room or give your entire
+    property a fresh look, we've got you covered.
+  </p>
+
+  <!-- 1.two side use images contact -->
+
+  <div class="whyChooseUs p-5 m-4">
+    <h2>Why Choose Us?</h2>
+    <ol>
+      <li class="py-2">
+        Superior Craftsmanship: Our team comprises talented painters who are
+        passionate about their work. They pay meticulous attention to detail,
+        ensuring flawless finishes and a stunning end result.
+      </li>
+      <li class="py-2">
+        Extensive Color Selection: We understand the impact that colors have on
+        the atmosphere of a room. That's why we offer an extensive range of
+        colors, shades, and finishes, enabling you to find the perfect match for
+        your space.
+      </li>
+
+      <li class="py-2">
+        Personalized Approach: We believe in the importance of understanding our
+        clients' vision. Our team takes the time to listen to your requirements,
+        preferences, and ideas, tailoring our services to suit your unique need
+      </li>
+      <li class="py-2">
+        High-Quality Materials: To guarantee long-lasting results, we only work
+        with premium-quality paints and materials. This ensures durability,
+        vibrant colors, and a beautiful finish that withstands the test of time.
+      </li>
+      <li class="py-2">
+        Timely and Efficient Service: We value your time and strive to complete
+        every project within the agreed-upon timeframe. Our team is committed to
+        delivering efficient service without compromising on quality.
+      </li>
+    </ol>
+  </div>
+</section>
+
+{% comment %} <!-- Examles of previews Services --> {% endcomment %}
+<section class="services">
+<div class="p-5 py-3 m-3 mb-5">
+<h2 class="p-2">Our Services:</h2>
+<div class="row row-cols-1 row-cols-md-4 g-3">
+  <div class="col">
+    <div class="card h-100 fade-in">
+      <img src="{% static 'images/dots.svg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Residential Painting</h5>
+        <p class="card-text">Give your home a fresh and inviting look with our residential painting services. We handle everything from single rooms to entire houses, transforming your living space into a reflection of your personal style.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100 fade-in">
+      <img src="{% static 'images/BluecolorSplashes.svg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Commercial Painting</h5>
+        <p class="card-text">Create an inspiring and professional environment for your business with our commercial painting solutions. We cater to offices, retail spaces, restaurants, and more, enhancing the aesthetics and appeal of your establishment.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100 fade-in">
+      <img src="{% static 'images/ColouredWavesContact.svg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Interior Painting</h5>
+        <p class="card-text">Our skilled painters breathe new life into your interiors, utilizing the perfect color palette to create the ambiance you desire. From walls and ceilings to doors and trim, we pay attention to every detail.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100 fade-in">
+      <img src="{% static 'images/BlackAndWhiteWaves.svg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Exterior Painting</h5>
+        <p class="card-text">Protect and beautify your property's exterior with our expert exterior painting services. We use weather-resistant paints that withstand harsh elements while providing an exceptional finish.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+ 
+</section>
+
+ 
+{% comment %} <!-- Contact --> {% endcomment %}
+<section class="contactSection p-5">
+  <h1 class="text-center text-shadow-3">Contact Us</h1>
+
+  {% if messages %}
+    <div role="alert">
+      {% for message in messages %}
+        {% if message.tags == 'success' %}
+          <div class="alert alert-success text-center" role="alert">
+            {{ message }}
+          </div>
+        {% elif message.tags == 'error' %}
+          <div class="alert alert-danger text-center" role="alert">
+            {{ message }}
+          </div>
+        {% else %}
+          <div class="alert alert-info text-center" role="alert">
+            {{ message }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="container-lg p-5 my-3">
+    <div class="row">
+      <div class="col-md-6 col-lg-6">
+        <h2 class="text-center"><strong>Get in Touch with Us</strong></h2>
+        <p class="text-center">
+          Please feel free to use the contact form below to send us a message.
+          Our team will make every effort to respond to your inquiry promptly.
+          Alternatively, you can reach us via phone or email using the provided
+          contact information.
+
+          {% comment %} <!-- info --> {% endcomment %}
+          <ul class="no-bullet">
+            <li class="text-center"><strong>Phone number:</strong> 000 000 000</li>
+            <li class="text-center"><strong>Email:</strong> info@example.com</li>
+            <li class="text-center"><strong>Address:</strong> address 123</li>
+          </ul>
+        </p>
+      </div>
+
+      <div class="col-md-4 col-lg-6">
+        <form class="contactForm" method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="bi bi-person-fill"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="Please enter your name"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address:</label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="bi bi-envelope-fill"></i>
+              </span>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="email@example.com"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Comment:</label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="message"
+              rows="5"
+              maxlength="254"
+              style="resize: none"
+              placeholder="Enter your comment here (less than 250 characters)"
+            ></textarea>
+          </div>
+
+          <div class="mt-4 text-center">
+            <button type="submit" class="btn btn-success w-100">
+              <strong>Submit</strong>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% comment %} 
+<!-- Footer -->
+<!-- social media links -->
+<!-- Privacy policy --> 
+{% endcomment %}
+
+{% endblock content %}
